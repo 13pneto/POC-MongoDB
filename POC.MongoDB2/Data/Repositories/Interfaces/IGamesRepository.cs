@@ -1,9 +1,7 @@
 using POC.MongoDB2.Entities;
 
-namespace POC.MongoDB2.Data.Repositories;
+namespace POC.MongoDB2.Data.Repositories.Interfaces;
 
-public interface IGamesRepository
+public interface IGamesRepository : IBaseRepository<Game>
 {
-    Task<List<Game>> GetAll();
-    Task<Game> Add(Game game);
 }

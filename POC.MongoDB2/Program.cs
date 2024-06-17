@@ -1,6 +1,17 @@
+using POC.MongoDB2;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder
+    .MapControllers()
+    .AddSwaggerGen();
+
+builder.Services.RegisterDependencies(builder.Configuration);
+
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-
-app.Run();
+app
+    .ConfigurePort()
+    .ConfigureSwaggerAndControllers()
+    .Run();

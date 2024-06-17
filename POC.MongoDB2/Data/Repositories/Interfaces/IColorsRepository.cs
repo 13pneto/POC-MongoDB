@@ -1,9 +1,7 @@
-using System.Drawing;
+using POC.MongoDB2.Entities;
 
-namespace POC.MongoDB2.Data.Repositories;
+namespace POC.MongoDB2.Data.Repositories.Interfaces;
 
-public interface IColorsRepository
+public interface IColorsRepository : IBaseRepository<Color>
 {
-    Task<List<Entities.Color>> GetAll();
-    Task<Entities.Color> Add(Entities.Color game);
 }
